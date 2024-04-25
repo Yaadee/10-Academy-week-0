@@ -56,8 +56,8 @@ st.subheader('Corrolation matrix')
 st.write(correlation_matrix)
 
 
-benin_city1_df = Benin_city1_df[Benin_city1_df['Timestamp'] != 'yyyy-mm-dd hh:mm']
-benin_city1_df['Timestamp'] = pd.to_datetime(Benin_city1_df['Timestamp'])
+Benin_city1_df = Benin_city1_df[Benin_city1_df['Timestamp'] != 'yyyy-mm-dd hh:mm']
+Benin_city1_df['Timestamp'] = pd.to_datetime(Benin_city1_df['Timestamp'])
 
 # Title and Introduction
 st.title('Solar Panel Installation Analysis')
@@ -66,8 +66,8 @@ st.write("Welcome to the solar panel installation analysis blog!")
 # Visualization for Benin City
 st.header('Analysis for Benin City')
 
-benin_city2_df = Benin_city2_df[Benin_city2_df['Timestamp'] != 'yyyy-mm-dd hh:mm']
-benin_city2_df['Timestamp'] = pd.to_datetime(benin_city2_df['Timestamp'])
+Benin_city2_df = Benin_city2_df[Benin_city2_df['Timestamp'] != 'yyyy-mm-dd hh:mm']
+Benin_city2_df['Timestamp'] = pd.to_datetime(Benin_city2_df['Timestamp'])
 
 # Title and Introduction
 st.title('Solar Panel Installation Analysis')
@@ -82,7 +82,7 @@ st.header('Analysis for Benin City')
 
 # Plot GHI
 plt.figure(figsize=(10, 6))
-plt.plot(benin_city1_df['Timestamp'].to_numpy(), benin_city1_df['GHI'], label='GHI', color='blue')
+plt.plot(Benin_city1_df['Timestamp'].to_numpy(), Benin_city1_df['GHI'], label='GHI', color='blue')
 plt.xlabel('Timestamp')
 plt.ylabel('GHI')
 plt.title('Variation of GHI over Time')
@@ -109,27 +109,12 @@ st.header('City 2 Analysis')
 
 # Summary Statistics for City 2
 st.subheader('Summary Statistics for City 2')
-st.write(city2_df.describe())
+st.write(Benin_city2_df.describe())
 
 # Visualization: Histogram for GHI (Global Horizontal Irradiance) - City 2
 plt.figure(figsize=(10, 6))
-sns.histplot(city2_df['GHI'], bins=20, kde=True)
+sns.histplot(Benin_city2_df['GHI'], bins=20, kde=True)
 plt.title('Histogram of GHI in City 2')
-plt.xlabel('GHI')
-plt.ylabel('Frequency')
-st.pyplot()
-
-# Visualization for City 3
-st.header('City 3 Analysis')
-
-# Summary Statistics for City 3
-st.subheader('Summary Statistics for City 3')
-st.write(city3_df.describe())
-
-# Visualization: Histogram for GHI (Global Horizontal Irradiance) - City 3
-plt.figure(figsize=(10, 6))
-sns.histplot(city3_df['GHI'], bins=20, kde=True)
-plt.title('Histogram of GHI in City 3')
 plt.xlabel('GHI')
 plt.ylabel('Frequency')
 st.pyplot()
