@@ -12,7 +12,7 @@ st.title("MoonLight Energy Solutions")
 
 @st.cache_data
 def load_data(path:str):
-    data = pd.read_excel(path)
+    data = pd.read_csv("/home/yadasa/Desktop/10-Academy-week-0/src/models/datasets/Benin/solar-measurements_benin-malanville_qc.csv")
     return data
 
 with st.sidebar:
