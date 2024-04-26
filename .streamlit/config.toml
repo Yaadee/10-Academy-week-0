@@ -1,3 +1,5 @@
 [server]
 
 runOnSave = true
+[deprecation]
+showPyplotGlobalUse = false
